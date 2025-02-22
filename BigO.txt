@@ -8,3 +8,26 @@ Time Complexity:
 Electronic Transfer --> O(s) where s is the size of the file. means time to transfer the file increases with the size.
 Airplane Transfer --> O(1) no matter how big the size of the file is it won't take any longer than one day. Even if the
 increases the time it take is constant.
+
+Big (O)     --> upper bound
+Big (Omega) --> lower bound (academia)
+Big (theta) --> tight bound in academia it means both Big (O) and Big (Omega)
+
+In industry, Big(O) means close to what Big (theta) means in academia.
+
+Space Complexity:
+Time is not the only thing that matters in an algorithm. we might also care about the amount of memory or
+space required by an algorithm.
+If we need to create an array of size n this will require big(n) space.
+If we need to create a two dimensional array of (NXN), it will require an array of N^2 space.
+
+Drop Constants in Big O evaluation:
+    Big O just describes the rate of increase. It is possible for O(N) to run faster than O(1) code for specific inputs.
+    Thus, O(2N) means O(N)
+Drop the non-dominant terms
+    What do you do about an expression such as O(N^2 + N)? The second N isn't exactly a constant. But its not especially
+    important.
+
+    so O(N^2 + N) becomes O(N^2)
+    O(N + logN) becomes O(N)
+    O(5*2^N + 1000N^100) becomes O(2^N)
