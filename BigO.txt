@@ -1,0 +1,10 @@
+
+Big O time is the language and metric we use to describe the efficiency of an algorithms.
+
+Time complexity: Imagine sending a tera byte file using an electronic transfer vs delivering it via a plan to California
+from Georgia. Sending it through plan would take lets say one day. while sending using an electronic transfer it could ta
+ke more than a day b/s the file is too big.
+Time Complexity:
+Electronic Transfer --> O(s) where s is the size of the file. means time to transfer the file increases with the size.
+Airplane Transfer --> O(1) no matter how big the size of the file is it won't take any longer than one day. Even if the
+increases the time it take is constant.
