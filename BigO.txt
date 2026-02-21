@@ -31,3 +31,5 @@ Drop the non-dominant terms
     so O(N^2 + N) becomes O(N^2)
     O(N + logN) becomes O(N)
     O(5*2^N + 1000N^100) becomes O(2^N)
+
+    O(X!) > O(2^x) > O(x^2) > O(xlogx) > O(x) > O(logx)

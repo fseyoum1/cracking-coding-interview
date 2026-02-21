@@ -8,9 +8,10 @@ public class CheckBigO
     {
         System.out.println(sum(3));
         System.out.println(pairSumSequence(3));
-        int[] arr = {1, 4, 8, 2, 22, 26, -1, 100, 80, 70};
-        System.out.println("compute min and max in an array: " + computeMinOrMax(arr));
-        System.out.println("compute min and max in an array: " + computeMinOrMax2(arr));
+        int[] arrA = {1, 4, 8, 2, 22, 26, -1, 100, 80, 70};
+        int [] arrB = {3, 2, 6, 1, 7, 8, 10};
+        System.out.println("compute min and max in an array: " + computeMinOrMax(arrA));
+        System.out.println("compute min and max in an array: " + computeMinOrMax2(arrA));
     }
 
     /**
@@ -97,5 +98,62 @@ public class CheckBigO
         return minMaxMap;
     }
 
+    // Multi-part algorithm add vs multiply
 
+    /**
+     * suppose you have an arrA and arrB, then print the content in each of them
+     * we do A chunks of work for arrA and B chunks of work for arrB.
+     * Total amount of work is O(A+B)
+     */
+    public static void printElement(Integer[] arrA, Integer[] arrB)
+    {
+        for (int a : arrA)
+        {
+            System.out.println(a);
+        }
+        for (int b : arrB)
+        {
+            System.out.println(b);
+        }
+    }
+
+    /**
+     *  we do B chunks of work for each element in A.
+     *  Therefore the total amount of work is O(A*B)
+     */
+    public void printElement2(Integer[] arrA, Integer[] arrB)
+    {
+        for (int a : arrA)
+        {
+            for (int b : arrB)
+            {
+                System.out.println(a + " " + b);
+            }
+        }
+    }
+
+    /* Amortized time
+    An array list dynamically resizes when the array is full or may be 75%, this causes some of the insertion
+    to take O(n). However, we also know that this doesn't happen very often. The vast majority of the time
+    insertioin will take O(1) time. We need a concept that takes both into account. This is what Amortized
+    time does. This worest case happens every once in a while. But once it happens, it won't happen again for so
+    long that the cost is "Amortized". The amortized time for each insertion is O(1).
+    */
+
+    // Log N Runtimes
+    /*
+    We start off with an N element arry to search, then after a single step we are down to N/2, N/4, N/8 etc.
+    when you see aproblem where the number of elements in the problem space gets halved each time, that will likely
+    be O(log N) runtime. This is the same reason why finding an element in a balnaced binary search tree is O(log N).
+    With each comparison we go either left of right.
+    */
+
+    public int f(int n)
+    {
+        if (n <= 1)
+        {
+            return 1;
+        }
+        return f(n -1) + f(n-1);
+    }
 }
