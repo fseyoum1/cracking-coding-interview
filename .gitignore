@@ -1,18 +1,42 @@
+# =========================
 # Gradle
+# =========================
 .gradle/
 build/
 
-# Compiled class files
+# Ignore Gradle cache
+**/build/
+**/.gradle/
+
+# =========================
+# Compiled files
+# =========================
 *.class
 
+# =========================
 # Logs
+# =========================
 *.log
 
-# IDE
+# =========================
+# IDEs
+# =========================
+
+# IntelliJ
 .idea/
 *.iml
+out/
+
+# VS Code
 .vscode/
 
-# OS files
+# Eclipse
+.project
+.classpath
+.settings/
+
+# =========================
+# OS Files
+# =========================
 .DS_Store
 Thumbs.db
